@@ -24,7 +24,7 @@ AR_DECLARE_API(
 AR_DECLARE_CLASSINFO(
 	aht::TrendsControl, ahtr::Aspect, aoe::Schema,
 	(
-		AR_NSTR(L"Компонент Alpha.Trends"),
-		AR_NSTR(L"Нативный компонент Alpha.Trends")
+		AR_NSTR(L"График"),
+		AR_NSTR(L"Компонент построения графиков")
 	)
 )

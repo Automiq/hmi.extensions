@@ -19,7 +19,7 @@ namespace Alpha { namespace Hmi { namespace Alarms { namespace Reflection {
 	{ };
 
 
-} } } } // namespace Alpha.Hmi.Environment.Reflection
+} } } } // namespace Alpha.Hmi.Alarms.Reflection
 
 
 /// Алиасы пространств имён

@@ -24,7 +24,7 @@ AR_DECLARE_API(
 AR_DECLARE_CLASSINFO(
 	aha::AlarmsControl, ahar::Aspect, aoe::Schema,
 	(
-		AR_NSTR(L"Компонент Alpha.Alarms"),
-		AR_NSTR(L"Нативный компонент Alpha.Alarms")
+		AR_NSTR(L"События"),
+		AR_NSTR(L"Компонент отображения технологических событий")
 	)
 )
