@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Reflection">
+      <UniqueIdentifier>{0ffb857a-e77b-4b08-a6cb-cc75c7c799fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\stdafx.h">
@@ -22,6 +25,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Module.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Reflection\Reflection.Common.h">
+      <Filter>Reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Reflection\Reflection.Interface.h">
+      <Filter>Reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Reflection\Reflection.Tables.h">
+      <Filter>Reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Unit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\TableControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -36,6 +54,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Sources\Module.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Unit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
