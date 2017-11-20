@@ -16,3 +16,5 @@
 // TODO: reference additional headers your program requires here
 #include <alpha.foundation>
 #include <alpha.hmi.core>
+
+#define LIBRARY_EXPORTS
