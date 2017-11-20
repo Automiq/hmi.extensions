@@ -1,6 +1,7 @@
 #include "stdafx.h"
 
 #include "Module.h"
+#include "Unit.h"
 
 ////////////////////////////////////////////////////////////////
 //	TablesModuleClassFactory
@@ -15,6 +16,11 @@ TablesModuleClassFactory::~TablesModuleClassFactory()
 
 BINBO_FUNC TablesModuleClassFactory::create_instance(Alpha::interface_id const &id, Alpha::Binbo::i_common_ptr &interface_ptr)
 {
+	if (id == uuid_of_type<Alpha::Om::IUnit>::value())
+	{
+		interface_ptr = Alpha::Binbo::foreign_cast_ex<Alpha::Binbo::i_common, Alpha::Om::IElement> (Alpha::aligned_generic_storage<TablesUnit>::construct());
+		return BINBO_NO_ERROR;
+	}
 	return BINBO_ERROR(Alpha::Binbo::ET_ERROR, "No interface");
 }
 
