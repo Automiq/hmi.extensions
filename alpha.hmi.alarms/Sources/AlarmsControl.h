@@ -1,0 +1,18 @@
+#pragma once
+
+
+namespace Alpha {
+	namespace Hmi {
+		namespace Alarms {
+
+			////////////////////////////////////////////////////////////////////////////////
+			///	@short
+			///		Реализация компонента Алармов.
+			////////////////////////////////////////////////////////////////////////////////
+			class AlarmsControl
+			{
+			};
+
+		}	//namespace Alarms
+	}	//namespace Hmi
+}	//namespace Alpha
