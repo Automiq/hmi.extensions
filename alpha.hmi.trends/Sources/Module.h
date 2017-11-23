@@ -53,4 +53,4 @@ private:
 	Alpha::Binbo::i_class_factory_ptr _classFactory;
 	mutable Alpha::CAtomicRefCounter<false> _RCB;
 
-};	// class AlarmsModule
+};	// class TrendsModule

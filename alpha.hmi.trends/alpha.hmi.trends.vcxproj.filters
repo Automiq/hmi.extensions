@@ -16,6 +16,12 @@
     <Filter Include="Reflection">
       <UniqueIdentifier>{e58c316b-2508-41c1-b6b3-b90a048e0d68}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Helpers">
+      <UniqueIdentifier>{1f3765ed-ae8a-4ae0-8290-89870c143340}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Helpers">
+      <UniqueIdentifier>{582b972c-e49b-4670-beb1-2187256fcc06}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\alpha.hmi.trends.cpp">
@@ -31,6 +37,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Sources\Unit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Helpers\ZOrderHelper.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\TrendsControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -58,6 +70,30 @@
     </ClInclude>
     <ClInclude Include="Sources\Reflection\Reflection.Trends.h">
       <Filter>Reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Helpers\HMILayoutItemMixin.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Helpers\HMIRectImplMixin.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Helpers\HMIVisualFeaturesMixin.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Helpers\mixin.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Helpers\ReflectionHelpers.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Helpers\ZOrderHelper.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Internationalization.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\TrendsInterfaceImpl.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
