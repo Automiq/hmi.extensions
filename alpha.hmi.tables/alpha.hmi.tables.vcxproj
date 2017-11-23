@@ -19,18 +19,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Sources\Helpers\HMILayoutItemMixin.h" />
+    <ClInclude Include="Sources\Helpers\HMIRectImplMixin.h" />
+    <ClInclude Include="Sources\Helpers\HMIVisualFeaturesMixin.h" />
+    <ClInclude Include="Sources\Helpers\mixin.h" />
+    <ClInclude Include="Sources\Helpers\ReflectionHelpers.h" />
+    <ClInclude Include="Sources\Helpers\ZOrderHelper.h" />
+    <ClInclude Include="Sources\Internationalization.h" />
     <ClInclude Include="Sources\Module.h" />
     <ClInclude Include="Sources\Reflection\Reflection.Common.h" />
     <ClInclude Include="Sources\Reflection\Reflection.Interface.h" />
     <ClInclude Include="Sources\Reflection\Reflection.Tables.h" />
     <ClInclude Include="Sources\stdafx.h" />
     <ClInclude Include="Sources\TableControl.h" />
+    <ClInclude Include="Sources\TableInterfaceImpl.h" />
     <ClInclude Include="Sources\targetver.h" />
     <ClInclude Include="Sources\Unit.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\alpha.hmi.tables.cpp" />
     <ClCompile Include="Sources\dllmain.cpp" />
+    <ClCompile Include="Sources\Helpers\ZOrderHelper.cpp" />
     <ClCompile Include="Sources\Module.cpp" />
     <ClCompile Include="Sources\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -38,6 +47,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Sources\TableControl.cpp" />
     <ClCompile Include="Sources\Unit.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -121,13 +131,14 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>ALPHA_ENABLE_BINBO;ALPHA_ENABLE_REFLECTION;WIN32;_DEBUG;_WINDOWS;_USRDLL;ALPHAHMITABLES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(boost_1_64);$(SolutionDir)index;$(SolutionDir)locator;$(SolutionDir)externals\tools;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(boost_1_64);$(SolutionDir)index;$(SolutionDir)locator;$(SolutionDir)externals\tools;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(boost_1_64)\lib\msvc\$(PlatformTarget);$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(boost_1_64)\lib\msvc\$(PlatformTarget);$(SolutionDir)lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -137,13 +148,14 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>ALPHA_ENABLE_BINBO;ALPHA_ENABLE_REFLECTION;_DEBUG;_WINDOWS;_USRDLL;ALPHAHMITABLES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(boost_1_64);$(SolutionDir)index;$(SolutionDir)locator;$(SolutionDir)externals\tools;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(boost_1_64);$(SolutionDir)index;$(SolutionDir)locator;$(SolutionDir)externals\tools;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(boost_1_64)\lib\msvc\$(PlatformTarget);$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(boost_1_64)\lib\msvc\$(PlatformTarget);$(SolutionDir)lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -155,7 +167,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>ALPHA_ENABLE_BINBO;ALPHA_ENABLE_REFLECTION;WIN32;NDEBUG;_WINDOWS;_USRDLL;ALPHAHMITABLES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(boost_1_64);$(SolutionDir)index;$(SolutionDir)locator;$(SolutionDir)externals\tools;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(boost_1_64);$(SolutionDir)index;$(SolutionDir)locator;$(SolutionDir)externals\tools;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -163,7 +175,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(boost_1_64)\lib\msvc\$(PlatformTarget);$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(boost_1_64)\lib\msvc\$(PlatformTarget);$(SolutionDir)lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Qt5Core.lib;Qt5Gui.lib;Qt5Widgets.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -175,7 +188,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>ALPHA_ENABLE_BINBO;ALPHA_ENABLE_REFLECTION;NDEBUG;_WINDOWS;_USRDLL;ALPHAHMITABLES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(boost_1_64);$(SolutionDir)index;$(SolutionDir)locator;$(SolutionDir)externals\tools;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(boost_1_64);$(SolutionDir)index;$(SolutionDir)locator;$(SolutionDir)externals\tools;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -183,7 +196,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(boost_1_64)\lib\msvc\$(PlatformTarget);$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(boost_1_64)\lib\msvc\$(PlatformTarget);$(SolutionDir)lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Qt5Core.lib;Qt5Gui.lib;Qt5Widgets.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

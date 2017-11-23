@@ -16,5 +16,13 @@
 // TODO: reference additional headers your program requires here
 #include <alpha.foundation>
 #include <alpha.hmi.core>
+#include <alpha.hmi.ui>
+
+#include "Internationalization.h"
+
+#define QT_NO_EMIT
+
+#include <QtWidgets\QGraphicsItem>
+#include <QtWidgets\QGraphicsScene>
 
 #define LIBRARY_EXPORTS
