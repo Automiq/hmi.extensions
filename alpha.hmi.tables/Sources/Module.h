@@ -8,7 +8,7 @@
 class TablesModuleClassFactory : public Alpha::Binbo::i_class_factory
 {
 public:
-	// test git
+	// test
 	TablesModuleClassFactory();
 	virtual ~TablesModuleClassFactory();
 
