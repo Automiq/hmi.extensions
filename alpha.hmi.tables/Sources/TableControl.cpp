@@ -9,6 +9,7 @@ using namespace Alpha::Hmi::Tables;
 ////////////////////////////////////////////////////////////////
 TableControl::TableControl()
 {
+	mas = new cell;
 	setRect(QRectF(0.0, 0.0, 100.0, 100.0));
 	//setPen(Qt::NoPen);
 }
@@ -42,3 +43,10 @@ void TableControl::setCenterPos(QPointF const &pos)
 {
 	setPos(pos - rect().center());
 }
+
+//Alpha::Binbo::default_string TableControl::GetAxisX() const {  // СВОЕ , реализуем новую возможность внести абсциссу
+//	return "Время, сек";
+//}  
+//void TableControl::SetAxisX(Alpha::Binbo::default_string const &description) {
+//	// какая то запись
+//}

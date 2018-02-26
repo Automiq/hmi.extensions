@@ -11,13 +11,13 @@
 #ifdef LIBRARY_EXPORTS
 #define LIBRARY_API __declspec(dllexport)
 #else
-#define LIBRARY_API __declspec(dllimport)
+#define LIBRARY_API __declspec(dllimport)  // зачем  не понял
 #endif
 #else
 #define LIBRARY_API
 #endif //_WIN32
 
-#ifdef __cplusplus
+#ifdef __cplusplus                     // где?
 extern "C"
 {
 #endif

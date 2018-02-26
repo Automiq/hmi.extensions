@@ -22,7 +22,7 @@ namespace Alpha
 				///		Этот класс содержит набор геттеров и сеттеров для организации набора
 				///		свойств (properties) у экспортированного объекта объектной модели Om.
 				////////////////////////////////////////////////////////////////////////////////
-				template <typename Implementation>
+				template <typename Implementation>   // имплементэйшн - реализация
 				class reflected_visual
 					:	public mixin<Implementation>
 				{
@@ -234,6 +234,7 @@ namespace Alpha
 						rect.setHeight(height);
 						to_impl(this)->setRect(rect);
 					}
+
 				};	//reflected_rect
 
 			}	//namespace Reflection

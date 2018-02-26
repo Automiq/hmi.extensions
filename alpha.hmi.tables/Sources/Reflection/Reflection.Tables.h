@@ -1,14 +1,16 @@
 #pragma once
 
 #include "..\TableControl.h"
+#include "Helpers\OverrideQRect.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////
 //		Объявление типа Table
 ////////////////////////////////////////////////////////////////////////////////
 
-AR_DECLARE_API_EX(
+AR_DECLARE_API_EX(                                 
 	// Имя регистрируемого пользовательского типа
+	// namespace aht = Alpha::Hmi::Tables;
 	aht::TableControl,
 	// Интерфейс, через который будет выполняться каст Alpha::Binbo::i_common
 	HMIFeatures::IBase,
@@ -49,15 +51,15 @@ AR_DECLARE_CLASSINFO(
 
 AR_BEGIN_DECLARE_PROPERTIES(aht::TableControl, ahtr::Aspect, aoe::Schema)
 	AR_PROPERTY(
-		(X, Property::None, GetX, SetX),
-		(AR_NSTR(L"X"), AR_NSTR(L"Координата X"))
+		(X, Property::None, GetX, SetX),              // имя, тип свойства (дефолтное и рантаймовое), гетер сеттер.
+		(AR_NSTR(L"X"), AR_NSTR(L"Координата X"))   // реализованны с помощью ПРИМЕСЕЙ - способ расширения классов
 	)
 	AR_PROPERTY(
-		(Y, Property::None, GetY, SetY),
+		(Y, Property::None, GetY, SetY),                // реализованы в примесях eflected_visual и reflected_rect
 		(AR_NSTR(L"Y"), AR_NSTR(L"Координата Y"))
 	)
 	AR_PROPERTY(
-		(Rotation, Property::None, GetRotation, SetRotation),
+		(Rotation, Property::None, GetRotation, SetRotation),    // и эти тоже
 		(AR_NSTR(L"Угол поворота"), AR_NSTR(L"Угол поворота"))
 	)
 	AR_PROPERTY(
@@ -84,4 +86,13 @@ AR_BEGIN_DECLARE_PROPERTIES(aht::TableControl, ahtr::Aspect, aoe::Schema)
 		(Height, Property::None, GetHeight, SetHeight),
 		(AR_NSTR(L"Высота"), AR_NSTR(L"Высота"))
 	)
+	AR_PROPERTY(
+		(HorVal, Property::None, GetNumberHorCells, SetNumberHorCells),
+			(AR_NSTR(L"Количество ячеек по горизонтали"), AR_NSTR(L"Количество ячеек по горизонтали"))
+	)
+	AR_PROPERTY(
+		(VertVal, Property::None, GetNumberVertCells, SetNumberVertCells),
+			(AR_NSTR(L"Количество ячеек по вертикали"), AR_NSTR(L"Количество ячеек по вертикали"))
+	)
+	
 AR_END_DECLARE_PROPERTIES

@@ -23,6 +23,7 @@
     <ClInclude Include="Sources\Helpers\HMIRectImplMixin.h" />
     <ClInclude Include="Sources\Helpers\HMIVisualFeaturesMixin.h" />
     <ClInclude Include="Sources\Helpers\mixin.h" />
+    <ClInclude Include="Sources\Helpers\OverrideQRect.h" />
     <ClInclude Include="Sources\Helpers\ReflectionHelpers.h" />
     <ClInclude Include="Sources\Helpers\ZOrderHelper.h" />
     <ClInclude Include="Sources\Internationalization.h" />

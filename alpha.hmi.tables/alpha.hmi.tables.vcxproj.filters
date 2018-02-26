@@ -72,6 +72,9 @@
     <ClInclude Include="Sources\TableInterfaceImpl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\Helpers\OverrideQRect.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\alpha.hmi.tables.cpp">
