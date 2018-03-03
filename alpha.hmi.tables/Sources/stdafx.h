@@ -24,5 +24,6 @@
 
 #include <QtWidgets\QGraphicsItem>
 #include <QtWidgets\QGraphicsScene>
+#include <QtGUI\QPainter>
 
 #define LIBRARY_EXPORTS

@@ -27,14 +27,13 @@ namespace Alpha {
 			///		Реализация компонента Таблица.
 			////////////////////////////////////////////////////////////////////////////////
 			class TableControl
-				:	//public QGraphicsRectItem   // прямоугольник Qt, самый базовый класс
-					public alarms_binbo_interface_impl<TableControl>
+				:	public MyQGraphicsRectItem                           // my add
+				,	public alarms_binbo_interface_impl<TableControl>
 				,	public hmi_features_visual_impl<TableControl>
 				,	public hmi_layout_item_impl<TableControl>
 				,	public hmi_rect_impl<TableControl>
 				,	public Reflection::reflected_visual<TableControl>   
 				,	public Reflection::reflected_rect<TableControl>    
-				,	public MyQGraphicsRectItem                           // my add
 			{
 				AR_FRIEND
 
