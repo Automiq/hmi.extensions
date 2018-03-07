@@ -9,8 +9,7 @@ using namespace Alpha::Hmi::Tables;
 ////////////////////////////////////////////////////////////////
 TableControl::TableControl()
 {
-	mas = new cell;
-	setRect(QRectF(0.0, 0.0, 100.0, 100.0));
+	setRect(QRectF(0.0, 0.0, 250.0, 100.0));
 	//setPen(Qt::NoPen);
 }
 
