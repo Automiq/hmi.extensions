@@ -1,6 +1,4 @@
 #pragma once
-#include <Map>
-#include <String>
 #include "QtWidgets\qgraphicsitem.h"
 #include "QtGui\qpainter.h"
 
@@ -9,28 +7,10 @@ namespace Alpha {
 	namespace Hmi {
 		namespace Tables {
 
+			
+
 			class MyQGraphicsRectItem : public QGraphicsRectItem
 			{
-
-				class Cell {
-					qreal Xpos;
-					qreal Ypos;
-					QString* data;
-				public:
-					Cell(uint32_t X, uint32_t Y, QString& text) {
-						Xpos = X;
-						Ypos = Y;
-						data = new QString(text);
-					};
-					~Cell() {};
-					qreal getX() { return Xpos; };
-					qreal getY() { return Ypos; };
-					QString getData() { return *data; };
-				};
-				
-
-				std::vector<Cell> TableData; // for inner data
-
 				uint32_t _NumberHorCells;	uint32_t _OldNumberHorCells;
 				uint32_t _NumberVertCells;	uint32_t _OldNumberVertCells;
 				const double _defaultCellWidth = 50.0;
@@ -52,9 +32,7 @@ namespace Alpha {
 				void _UpdateLines() // Обновим количество и размер линий
 				{
 					_Lines.clear();
-					TableData.push_back(Cell(1, 1, QString("First")));
-					TableData.push_back(Cell(1, 2, QString("Second")));
-					TableData.push_back(Cell(2, 1, QString("Third")));
+
 
 					for (int i = 0; i <= _NumberHorCells; i++) {                 // move on X
 						_Lines.push_back(QLine(0 + (50 * i), 0, 0 + (50 * i), 20 * _NumberVertCells));
@@ -62,8 +40,6 @@ namespace Alpha {
 					for (int i = 0; i <= _NumberVertCells; i++) {                // move on Y
 						_Lines.push_back(QLine(0, 0 + (20 * i), 50 * _NumberHorCells, 0 + (20 * i)));
 					}
-
-					//TableData.push_back(point(0, 0, QString("hfgdslkhf;dshu")));
 
 					// Инициируем перерисовку
 					//update(0,0,_defaultCellWidth*_NumberHorCells,_defaultCellHeight*_NumberVertCells); 
@@ -87,6 +63,26 @@ namespace Alpha {
 					
 					_UpdateLines();
 				};
+
+
+				class Cell {
+					qreal Xpos;
+					qreal Ypos;
+					QString* data;
+				public:
+					Cell(uint32_t X, uint32_t Y, QString& text) {
+						Xpos = X;
+						Ypos = Y;
+						data = new QString(text);
+					};
+					~Cell() {};
+					qreal getX() { return Xpos; };
+					qreal getY() { return Ypos; };
+					QString getData() { return *data; };
+				};
+				std::list<Cell> TableData; // for inner data
+
+
 
 				void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override {
 

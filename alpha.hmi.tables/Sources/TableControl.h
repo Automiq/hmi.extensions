@@ -32,6 +32,9 @@ namespace Alpha {
 			{
 				AR_FRIEND
 
+
+			
+
 			public:
 
 				TableControl();
@@ -40,6 +43,8 @@ namespace Alpha {
 				void setNativeParent(QGraphicsItem *parent);  // установить прямого родителя
 
 				void setRect(QRectF const &rc);
+
+				void SetItemText(QString const &text, uint32_t column, uint32_t line);
 
 				QPointF centerPos() const;
 				void setCenterPos(QPointF const &pos);

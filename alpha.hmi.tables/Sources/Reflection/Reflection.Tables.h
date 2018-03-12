@@ -28,7 +28,7 @@ AR_DECLARE_API_EX(
 	//AGGREGATEDS
 	PROPERTIES
 	//SIGNALS
-	//METHODS
+	METHODS
 )
 
 
@@ -99,6 +99,8 @@ AR_END_DECLARE_PROPERTIES
 
 
 
+
+
 //AR_BEGIN_DECLARE_METHODS(aht::TableControl, ahtr::Aspect, aoe::Schema)
 //AR_METHOD(
 //	(FormX),
@@ -117,3 +119,12 @@ AR_END_DECLARE_PROPERTIES
 //		(AR_NSTR(L"Получение оконной координаты Y"), AR_NSTR(L"Получение оконной координаты Y"))
 //)
 //AR_END_DECLARE_METHODS
+
+
+
+AR_BEGIN_DECLARE_METHODS(aht::TableControl, ahtr::Aspect, aoe::Schema)
+AR_METHOD(
+	(SetItemText),
+	(AR_NSTR(L"Внести данные"), AR_NSTR(L"Внести данные"))
+)
+AR_END_DECLARE_METHODS

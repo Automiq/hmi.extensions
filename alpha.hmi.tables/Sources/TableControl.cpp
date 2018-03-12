@@ -2,6 +2,8 @@
 
 #include "TableControl.h"
 
+#include "Helpers\OverrideQRect.h"
+
 using namespace Alpha::Hmi::Tables;
 
 ////////////////////////////////////////////////////////////////
@@ -44,6 +46,16 @@ void TableControl::setCenterPos(QPointF const &pos)
 {
 	setPos(pos - rect().center());
 }
+
+
+void TableControl::SetItemText(QString const &text, uint32_t column, uint32_t line)
+{
+	TableData.push_back(Cell(column, line, QString(text)));
+}
+
+
+
+
 
 //Alpha::Binbo::default_string TableControl::GetAxisX() const {  // СВОЕ , реализуем новую возможность внести абсциссу
 //	return "Время, сек";
