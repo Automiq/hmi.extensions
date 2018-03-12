@@ -22,6 +22,7 @@
 
 #define QT_NO_EMIT
 
+
 #include <QtWidgets\QGraphicsItem>
 #include <QtWidgets\QGraphicsScene>
 #include <QtGUI\QPainter>

@@ -1,14 +1,14 @@
 #pragma once
 
 #include "..\TableControl.h"
-#include "Helpers\OverrideQRect.h"
+#include "..\Helpers\OverrideQRect.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////
 //		Объявление типа Table
 ////////////////////////////////////////////////////////////////////////////////
 
-AR_DECLARE_API_EX(                                 
+AR_DECLARE_API_EX(
 	// Имя регистрируемого пользовательского типа
 	// namespace aht = Alpha::Hmi::Tables;
 	aht::TableControl,
@@ -97,10 +97,23 @@ AR_BEGIN_DECLARE_PROPERTIES(aht::TableControl, ahtr::Aspect, aoe::Schema)
 	
 AR_END_DECLARE_PROPERTIES
 
-//// Регистрация методов
-//AR_BEGIN_DECLARE_METHODS(ahr::CRectangle, ahr::Aspect, Expose::Schema)
-//AR_METHOD((FormX), (AR_NSTR(L"Получение координаты X на форме"), AR_NSTR(L"Получение координаты X на форме")))
-//AR_METHOD((FormY), (AR_NSTR(L"Получение координаты Y на форме"), AR_NSTR(L"Получение координаты Y на форме")))
-//AR_METHOD((ScreenX), (AR_NSTR(L"Получение оконной координаты X"), AR_NSTR(L"Получение оконной координаты X")))
-//AR_METHOD((ScreenY), (AR_NSTR(L"Получение оконной координаты Y"), AR_NSTR(L"Получение оконной координаты Y")))
+
+
+//AR_BEGIN_DECLARE_METHODS(aht::TableControl, ahtr::Aspect, aoe::Schema)
+//AR_METHOD(
+//	(FormX),
+//		(AR_NSTR(L"Получение координаты X на форме"), AR_NSTR(L"Получение координаты X на форме"))
+//)
+//AR_METHOD(
+//	(FormY),
+//		(AR_NSTR(L"Получение координаты Y на форме"), AR_NSTR(L"Получение координаты Y на форме"))
+//)
+//AR_METHOD(
+//	(ScreenX),
+//		(AR_NSTR(L"Получение оконной координаты X"), AR_NSTR(L"Получение оконной координаты X"))
+//)
+//AR_METHOD(
+//	(ScreenY),
+//		(AR_NSTR(L"Получение оконной координаты Y"), AR_NSTR(L"Получение оконной координаты Y"))
+//)
 //AR_END_DECLARE_METHODS

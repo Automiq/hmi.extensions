@@ -42,6 +42,7 @@
     <ClCompile Include="Sources\dllmain.cpp" />
     <ClCompile Include="Sources\Helpers\ZOrderHelper.cpp" />
     <ClCompile Include="Sources\Module.cpp" />
+    <ClCompile Include="Sources\OverrideQRect.cpp" />
     <ClCompile Include="Sources\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

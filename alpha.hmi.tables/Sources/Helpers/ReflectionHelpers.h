@@ -22,7 +22,7 @@ namespace Alpha
 				///		Этот класс содержит набор геттеров и сеттеров для организации набора
 				///		свойств (properties) у экспортированного объекта объектной модели Om.
 				////////////////////////////////////////////////////////////////////////////////
-				template <typename Implementation>   // имплементэйшн - реализация
+				template <typename Implementation>   
 				class reflected_visual
 					:	public mixin<Implementation>
 				{

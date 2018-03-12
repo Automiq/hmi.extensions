@@ -5,22 +5,17 @@
 #include "Helpers\HMIRectImplMixin.h"
 #include "Helpers\ReflectionHelpers.h"
 
+//!
+#include "c:\Users\Aleksey\hmi.extensions\externals\Alpha.Foundation\Reflection\Macro.h"
+
 #include "Helpers\OverrideQRect.h"
+
 
 #include "TableInterfaceImpl.h"
 
 namespace Alpha {
 	namespace Hmi {
 		namespace Tables {
-
-
-			class cell : public QGraphicsRectItem {                                                              // €чейка таблицы
-				double x, y, w, h;
-			public:
-				cell() : x(0), y(0), w(50), h(50) {};
-				cell(qreal x, qreal y, qreal w, qreal h) : x(x), y(y), w(w), h(h) {};
-				~cell() {};
-			};
 
 			////////////////////////////////////////////////////////////////////////////////
 			///	@short
@@ -38,7 +33,6 @@ namespace Alpha {
 				AR_FRIEND
 
 			public:
-				cell* mas;  //!!!!
 
 				TableControl();
 				~TableControl();

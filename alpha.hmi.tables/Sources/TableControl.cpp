@@ -9,7 +9,9 @@ using namespace Alpha::Hmi::Tables;
 ////////////////////////////////////////////////////////////////
 TableControl::TableControl()
 {
-	setRect(QRectF(0.0, 0.0, 250.0, 100.0));
+	setFlag(QGraphicsItem::ItemClipsChildrenToShape,true);
+	setRect(QRectF(0.0, 0.0, 500.0, 200.0));
+	
 	//setPen(Qt::NoPen);
 }
 
