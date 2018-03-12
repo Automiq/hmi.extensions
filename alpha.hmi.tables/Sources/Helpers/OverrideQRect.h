@@ -29,6 +29,8 @@ namespace Alpha {
 				void retrieveVertLines();*/
 
 
+			public:
+
 				void _UpdateLines() // Обновим количество и размер линий
 				{
 					_Lines.clear();
@@ -42,11 +44,13 @@ namespace Alpha {
 					}
 
 					// Инициируем перерисовку
-					//update(0,0,_defaultCellWidth*_NumberHorCells,_defaultCellHeight*_NumberVertCells); 
+					update(0, 0, _defaultCellWidth*_NumberHorCells, _defaultCellHeight*_NumberVertCells);
 
 				};
 
-			public:
+
+
+
 
 				MyQGraphicsRectItem()
 					: _NumberHorCells(5)
@@ -68,17 +72,17 @@ namespace Alpha {
 				class Cell {
 					qreal Xpos;
 					qreal Ypos;
-					QString* data;
+					Alpha::Binbo::default_string* data;
 				public:
-					Cell(uint32_t X, uint32_t Y, QString& text) {
+					Cell(uint32_t X, uint32_t Y, Alpha::Binbo::default_string& text) {
 						Xpos = X;
 						Ypos = Y;
-						data = new QString(text);
+						data = new Alpha::Binbo::default_string(text);
 					};
 					~Cell() {};
 					qreal getX() { return Xpos; };
 					qreal getY() { return Ypos; };
-					QString getData() { return *data; };
+					Alpha::Binbo::default_string getData() { return *data; };
 				};
 				std::list<Cell> TableData; // for inner data
 
@@ -95,7 +99,7 @@ namespace Alpha {
 					// рисуем содержимое таблицы
 
 					for (Cell s : TableData) {
-						painter->drawText((s.getX()-1)*_defaultCellWidth+2, s.getY()*_defaultCellHeight-2, s.getData());
+						painter->drawText((s.getX()-1)*_defaultCellWidth+2, s.getY()*_defaultCellHeight-2, QString::fromStdString(s.getData()));
 					}
 					// рисуем разделительные линии
 					painter->drawLines(_Lines);

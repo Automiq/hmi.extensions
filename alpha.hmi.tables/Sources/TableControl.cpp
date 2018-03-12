@@ -48,9 +48,11 @@ void TableControl::setCenterPos(QPointF const &pos)
 }
 
 
-void TableControl::SetItemText(QString const &text, uint32_t column, uint32_t line)
+void TableControl::SetItemText(Alpha::Binbo::default_string const &text, uint32_t column, uint32_t line)
 {
-	TableData.push_back(Cell(column, line, QString(text)));
+	TableData.push_back(Cell(column, line, Alpha::Binbo::default_string(text)));
+
+	MyQGraphicsRectItem::_UpdateLines();
 }
 
 
