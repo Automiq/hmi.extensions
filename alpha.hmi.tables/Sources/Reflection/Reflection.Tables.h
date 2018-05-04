@@ -51,15 +51,15 @@ AR_DECLARE_CLASSINFO(
 
 AR_BEGIN_DECLARE_PROPERTIES(aht::TableControl, ahtr::Aspect, aoe::Schema)
 	AR_PROPERTY(
-		(X, Property::None, GetX, SetX),              // имя, тип свойства (дефолтное и рантаймовое), гетер сеттер.
-		(AR_NSTR(L"X"), AR_NSTR(L"Координата X"))   // реализованны с помощью ПРИМЕСЕЙ - способ расширения классов
+		(X, Property::None, GetX, SetX),              
+		(AR_NSTR(L"X"), AR_NSTR(L"Координата X"))   
 	)
 	AR_PROPERTY(
-		(Y, Property::None, GetY, SetY),                // реализованы в примесях eflected_visual и reflected_rect
+		(Y, Property::None, GetY, SetY),                
 		(AR_NSTR(L"Y"), AR_NSTR(L"Координата Y"))
 	)
 	AR_PROPERTY(
-		(Rotation, Property::None, GetRotation, SetRotation),    // и эти тоже
+		(Rotation, Property::None, GetRotation, SetRotation),    
 		(AR_NSTR(L"Угол поворота"), AR_NSTR(L"Угол поворота"))
 	)
 	AR_PROPERTY(
@@ -94,37 +94,33 @@ AR_BEGIN_DECLARE_PROPERTIES(aht::TableControl, ahtr::Aspect, aoe::Schema)
 		(VertVal, Property::None, GetNumberVertCells, SetNumberVertCells),
 			(AR_NSTR(L"Количество ячеек по вертикали"), AR_NSTR(L"Количество ячеек по вертикали"))
 	)
+	AR_PROPERTY(
+		(CellsWidth, Property::None, GetCellsWidth, SetCellsWidth),
+			(AR_NSTR(L"Размер ячеек по горизонтали"), AR_NSTR(L"Размер ячеек по горизонтали"))
+	)
+	AR_PROPERTY(
+		(CellsHeight, Property::None, GetCellsHeight, SetCellsHeight),
+			(AR_NSTR(L"Размер ячеек по вертикали"), AR_NSTR(L"Размер ячеек по вертикали"))
+	)
+	/*AR_PROPERTY(
+		(brush, Property::None, GetBrush, SetBrush),
+			(AR_NSTR(L"Цвет таблицы"), AR_NSTR(L"Цвет таблицы"))
+	)*/
+	AR_PROPERTY(
+		(_CaptionFlag, Property::None, GetCaption, SetCaption),
+			(AR_NSTR(L"Заголовки"), AR_NSTR(L"Заголовки"))
+	)
 	
 AR_END_DECLARE_PROPERTIES
 
 
 
 
-
-//AR_BEGIN_DECLARE_METHODS(aht::TableControl, ahtr::Aspect, aoe::Schema)
-//AR_METHOD(
-//	(FormX),
-//		(AR_NSTR(L"Получение координаты X на форме"), AR_NSTR(L"Получение координаты X на форме"))
-//)
-//AR_METHOD(
-//	(FormY),
-//		(AR_NSTR(L"Получение координаты Y на форме"), AR_NSTR(L"Получение координаты Y на форме"))
-//)
-//AR_METHOD(
-//	(ScreenX),
-//		(AR_NSTR(L"Получение оконной координаты X"), AR_NSTR(L"Получение оконной координаты X"))
-//)
-//AR_METHOD(
-//	(ScreenY),
-//		(AR_NSTR(L"Получение оконной координаты Y"), AR_NSTR(L"Получение оконной координаты Y"))
-//)
-//AR_END_DECLARE_METHODS
-
-
-
 AR_BEGIN_DECLARE_METHODS(aht::TableControl, ahtr::Aspect, aoe::Schema)
+
 AR_METHOD(
-	(SetItemText),
+	(SetItemData),
 	(AR_NSTR(L"Внести данные"), AR_NSTR(L"Внести данные"))
 )
+
 AR_END_DECLARE_METHODS

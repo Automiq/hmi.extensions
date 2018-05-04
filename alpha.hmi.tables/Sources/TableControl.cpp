@@ -48,20 +48,9 @@ void TableControl::setCenterPos(QPointF const &pos)
 }
 
 
-void TableControl::SetItemText(Alpha::Binbo::default_string const &text, uint32_t column, uint32_t line)
+void TableControl::SetItemData(Alpha::Binbo::default_variant const &data, uint32_t column, uint32_t line)
 {
-	TableData.push_back(Cell(column, line, Alpha::Binbo::default_string(text)));
-
-	MyQGraphicsRectItem::_UpdateLines();
+	//TableData.push_back(Cell(column, line, QString::fromStdString(Alpha::Binbo::to_string(data))));
+	TableData.emplace(Cell(column, line), QString::fromStdString(Alpha::Binbo::to_string(data)));
+	update();
 }
-
-
-
-
-
-//Alpha::Binbo::default_string TableControl::GetAxisX() const {  // СВОЕ , реализуем новую возможность внести абсциссу
-//	return "Время, сек";
-//}  
-//void TableControl::SetAxisX(Alpha::Binbo::default_string const &description) {
-//	// какая то запись
-//}

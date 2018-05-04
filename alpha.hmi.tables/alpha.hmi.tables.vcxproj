@@ -25,6 +25,7 @@
     <ClInclude Include="Sources\Helpers\mixin.h" />
     <ClInclude Include="Sources\Helpers\OverrideQRect.h" />
     <ClInclude Include="Sources\Helpers\ReflectionHelpers.h" />
+    <ClInclude Include="Sources\Helpers\Scroll.h" />
     <ClInclude Include="Sources\Helpers\ZOrderHelper.h" />
     <ClInclude Include="Sources\Internationalization.h" />
     <ClInclude Include="Sources\Module.h" />
@@ -43,6 +44,7 @@
     <ClCompile Include="Sources\Helpers\ZOrderHelper.cpp" />
     <ClCompile Include="Sources\Module.cpp" />
     <ClCompile Include="Sources\OverrideQRect.cpp" />
+    <ClCompile Include="Sources\Scroll.cpp" />
     <ClCompile Include="Sources\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
