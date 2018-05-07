@@ -41,8 +41,9 @@ namespace Alpha {
 
 				void setRect(QRectF const &rc);
 
-				//void SetItemText(Alpha::Binbo::default_string const &data, uint32_t column, uint32_t line);
 				void SetItemData(Alpha::Binbo::default_variant const &data, uint32_t column, uint32_t line);
+				void SetColumnCaptionData(Alpha::Binbo::default_variant const &data, uint32_t column);
+				void SetLineCaptionData(Alpha::Binbo::default_variant const &data, uint32_t line);
 
 				QPointF centerPos() const;
 				void setCenterPos(QPointF const &pos);

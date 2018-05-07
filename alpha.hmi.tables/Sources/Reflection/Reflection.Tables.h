@@ -102,10 +102,10 @@ AR_BEGIN_DECLARE_PROPERTIES(aht::TableControl, ahtr::Aspect, aoe::Schema)
 		(CellsHeight, Property::None, GetCellsHeight, SetCellsHeight),
 			(AR_NSTR(L"Размер ячеек по вертикали"), AR_NSTR(L"Размер ячеек по вертикали"))
 	)
-	/*AR_PROPERTY(
-		(brush, Property::None, GetBrush, SetBrush),
+	AR_PROPERTY(
+		(BrushColor, Property::None, GetBrushColor, SetBrushColor),
 			(AR_NSTR(L"Цвет таблицы"), AR_NSTR(L"Цвет таблицы"))
-	)*/
+	)
 	AR_PROPERTY(
 		(_CaptionFlag, Property::None, GetCaption, SetCaption),
 			(AR_NSTR(L"Заголовки"), AR_NSTR(L"Заголовки"))
@@ -121,6 +121,14 @@ AR_BEGIN_DECLARE_METHODS(aht::TableControl, ahtr::Aspect, aoe::Schema)
 AR_METHOD(
 	(SetItemData),
 	(AR_NSTR(L"Внести данные"), AR_NSTR(L"Внести данные"))
+)
+AR_METHOD(
+	(SetColumnCaptionData),
+	(AR_NSTR(L"Внести заголовок для колонок"), AR_NSTR(L"Внести заголовок для колонок"))
+)
+AR_METHOD(
+	(SetLineCaptionData),
+	(AR_NSTR(L"Внести заголовок для строк"), AR_NSTR(L"Внести заголовок для строк"))
 )
 
 AR_END_DECLARE_METHODS

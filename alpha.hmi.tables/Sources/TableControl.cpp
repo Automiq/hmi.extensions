@@ -12,9 +12,7 @@ using namespace Alpha::Hmi::Tables;
 TableControl::TableControl()
 {
 	setFlag(QGraphicsItem::ItemClipsChildrenToShape,true);
-	setRect(QRectF(0.0, 0.0, 500.0, 200.0));
-	
-	//setPen(Qt::NoPen);
+	setRect(QRectF(0, 0, 500.0, 200.0));
 }
 
 TableControl::~TableControl()
@@ -50,7 +48,18 @@ void TableControl::setCenterPos(QPointF const &pos)
 
 void TableControl::SetItemData(Alpha::Binbo::default_variant const &data, uint32_t column, uint32_t line)
 {
-	//TableData.push_back(Cell(column, line, QString::fromStdString(Alpha::Binbo::to_string(data))));
-	TableData.emplace(Cell(column, line), QString::fromStdString(Alpha::Binbo::to_string(data)));
+	TableData[Cell(column, line)] = QString::fromStdString(Alpha::Binbo::to_string(data));
+	update();
+}
+
+void TableControl::SetColumnCaptionData(Alpha::Binbo::default_variant const &data, uint32_t column)
+{
+	CaptionColumnData[column] = QString::fromStdString(Alpha::Binbo::to_string(data));
+	update();
+}
+
+void TableControl::SetLineCaptionData(Alpha::Binbo::default_variant const &data, uint32_t line)
+{
+	CaptionLineData[line] = QString::fromStdString(Alpha::Binbo::to_string(data));
 	update();
 }

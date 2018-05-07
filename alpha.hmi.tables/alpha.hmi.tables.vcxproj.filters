@@ -101,9 +101,6 @@
     <ClCompile Include="Sources\TableControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\OverrideQRect.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Sources\Scroll.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
