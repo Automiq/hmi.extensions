@@ -27,5 +27,7 @@
 #include <QtWidgets\QGraphicsScene>
 #include <QtGUI\QPainter>
 #include <QtCore/QPointer>
+#include <QtWidgets\QScrollbar>
+
 
 #define LIBRARY_EXPORTS

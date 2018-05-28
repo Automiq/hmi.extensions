@@ -10,13 +10,16 @@ using namespace Alpha::Hmi::Tables;
 //	TableControl
 ////////////////////////////////////////////////////////////////
 TableControl::TableControl()
+	: control(new MyQGraphicsRectItem(this))
 {
-	setFlag(QGraphicsItem::ItemClipsChildrenToShape,true);
 	setRect(QRectF(0, 0, 500.0, 200.0));
+
+	control->setParentItem(m_pRoot);
 }
 
 TableControl::~TableControl()
 {
+	control->setParentItem(nullptr);
 }
 
 void TableControl::setNativeParent(QGraphicsItem *parent)
@@ -33,6 +36,8 @@ void TableControl::setRect(QRectF const &rc)
 {
 	QGraphicsRectItem::setRect(rc);
 	setTransformOriginPoint(rc.center());
+
+	UpdateScrolls();
 }
 
 QPointF TableControl::centerPos() const
@@ -48,18 +53,78 @@ void TableControl::setCenterPos(QPointF const &pos)
 
 void TableControl::SetItemData(Alpha::Binbo::default_variant const &data, uint32_t column, uint32_t line)
 {
-	TableData[Cell(column, line)] = QString::fromStdString(Alpha::Binbo::to_string(data));
+	control->TableData[MyQGraphicsRectItem::Cell(column, line)] = QString::fromStdString(Alpha::Binbo::to_string(data));
 	update();
 }
 
 void TableControl::SetColumnCaptionData(Alpha::Binbo::default_variant const &data, uint32_t column)
 {
-	CaptionColumnData[column] = QString::fromStdString(Alpha::Binbo::to_string(data));
+	control->CaptionColumnData[column] = QString::fromStdString(Alpha::Binbo::to_string(data));
 	update();
 }
 
 void TableControl::SetLineCaptionData(Alpha::Binbo::default_variant const &data, uint32_t line)
 {
-	CaptionLineData[line] = QString::fromStdString(Alpha::Binbo::to_string(data));
+	control->CaptionLineData[line] = QString::fromStdString(Alpha::Binbo::to_string(data));
 	update();
+}
+
+void TableControl::SetBrushColor(uint32_t const val)
+{
+	control->SetBrushColor(val);
+}
+
+uint32_t TableControl::GetBrushColor() const
+{
+	return control->GetBrushColor();
+}
+
+void TableControl::SetNumberHorCells(uint32_t HorVal)
+{
+	control->SetNumberHorCells(HorVal);
+}
+
+uint32_t TableControl::GetNumberHorCells() const
+{
+	return control->GetNumberHorCells();
+}
+
+void TableControl::SetNumberVertCells(uint32_t VertVal)
+{
+	control->SetNumberVertCells(VertVal);
+}
+
+uint32_t TableControl::GetNumberVertCells() const
+{
+	return control->GetNumberVertCells();
+}
+
+void TableControl::SetCellsWidth(double CellsWidth)
+{
+	control->SetCellsWidth(CellsWidth);
+}
+
+double TableControl::GetCellsWidth() const
+{
+	return control->GetCellsWidth();
+}
+
+void TableControl::SetCellsHeight(double CellsHeight)
+{
+	control->SetCellsHeight(CellsHeight);
+}
+
+double TableControl::GetCellsHeight() const
+{
+	return control->GetCellsHeight();
+}
+
+void TableControl::SetCaption(bool CaptionFlag)
+{
+	control->SetCaption(CaptionFlag);
+}
+
+bool TableControl::GetCaption() const
+{
+	return control->GetCaption();
 }

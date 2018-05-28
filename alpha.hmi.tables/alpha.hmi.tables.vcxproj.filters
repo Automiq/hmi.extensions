@@ -76,7 +76,7 @@
       <Filter>Header Files\Helpers</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Helpers\Scroll.h">
-      <Filter>Header Files\Helpers</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
