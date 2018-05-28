@@ -29,6 +29,8 @@ namespace Alpha {
 
 				bool _CaptionFlag;
 				uint32_t Caption;
+				int a;
+				Scrolls::CQtGraphicsFrame* Scrollbars;
 
 			public:
 
@@ -52,7 +54,14 @@ namespace Alpha {
 						_Lines.push_back(QLine(0, 0 + (_CellsHeight * i), _CellsWidth * (_NumberHorCells + Caption), 0 + (_CellsHeight * i)));
 					}
 
+					
+					a++;
+
 					// Инициируем перерисовку
+					QSizeF size(_CellsWidth * (_NumberHorCells + Caption), _CellsHeight * (_NumberVertCells + Caption));
+					QRectF par = Scrollbars->SetContentSize(size, rect());
+					setRect(par);
+					Scrollbars->DrawScrolls(rect());
 					update(0, 0, _CellsWidth*_NumberHorCells, _CellsHeight*_NumberVertCells);
 
 				};
@@ -68,8 +77,9 @@ namespace Alpha {
 					, _CellsHeight(_defaultCellHeight)
 					, brush(Qt::white)
 					, _CaptionFlag(true)
-					, Caption(1)
+					, Caption(1),a(0)
 				{
+					Scrollbars = new Scrolls::CQtGraphicsFrame();
 					setFlag(QGraphicsItem::ItemClipsChildrenToShape,true);
 					setRect(QRectF(0, 0, _CellsWidth*(_NumberHorCells+Caption), _CellsHeight*(_NumberVertCells+Caption)));
 					_UpdateLines();
@@ -156,43 +166,52 @@ namespace Alpha {
 
 				void SetNumberHorCells(uint32_t HorVal)
 				{
-					_NumberHorCells = HorVal;
-
-					_UpdateLines();
+					if (HorVal != _NumberHorCells) {
+						_NumberHorCells = HorVal;
+						_UpdateLines();
+					}
 				};
 
 				void SetNumberVertCells(uint32_t VertVal)
 				{
-					_NumberVertCells = VertVal;
+					if (VertVal != _NumberVertCells) {
+						_NumberVertCells = VertVal;
 
-					_UpdateLines();
+						_UpdateLines();
+					}
 				};
 
 				void SetCellsWidth(double CellsWidth)
 				{
-					_CellsWidth = CellsWidth;
+					if (CellsWidth != _CellsWidth) {
+						_CellsWidth = CellsWidth;
 
-					_UpdateLines();
+						_UpdateLines();
+					}
 				};
 
 				void SetCellsHeight(double CellsHeight)
 				{
-					_CellsHeight = CellsHeight;
+					if (CellsHeight != _CellsHeight) {
+						_CellsHeight = CellsHeight;
 
-					_UpdateLines();
+						_UpdateLines();
+					}
 				};
 
 				void SetCaption(bool CaptionFlag)
 				{
-					_CaptionFlag = CaptionFlag;
+					if (CaptionFlag != _CaptionFlag) {
+						_CaptionFlag = CaptionFlag;
 
-					_UpdateLines();
+						_UpdateLines();
+					}
 				};
 
 				void SetBrushColor( uint32_t const val)
 				{
-					brush.setColor(QColor::fromRgba(val));
-					update();
+						brush.setColor(QColor::fromRgba(val));
+					//update();
 				};
 
 

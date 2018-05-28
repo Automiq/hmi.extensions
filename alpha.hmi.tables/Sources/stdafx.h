@@ -26,5 +26,6 @@
 #include <QtWidgets\QGraphicsItem>
 #include <QtWidgets\QGraphicsScene>
 #include <QtGUI\QPainter>
+#include <QtCore/QPointer>
 
 #define LIBRARY_EXPORTS

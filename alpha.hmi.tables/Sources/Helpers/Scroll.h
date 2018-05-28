@@ -1,45 +1,48 @@
 #pragma once
-#include "stdafx.h"
 #include "QtWidgets/qgraphicsitem.h"
 #include "QtWidgets/qgraphicsscene.h"
 #include <QtWidgets/QScrollbar>
 #include <QtWidgets/QGraphicsProxyWidget>
+#include <QtCore/QPointer>
 
 namespace Alpha {
 	namespace Hmi {
 		namespace Tables {
+			namespace Scrolls {
 
-			class CQtGraphicsFrame : public QObject, public QGraphicsRectItem
-			{
-				Q_OBJECT
+				class CQtGraphicsFrame : public QObject, public QGraphicsRectItem
+				{
+					//Q_OBJECT
 
-			protected:
+				protected:
 
-				QSizeF m_qContentSize;
+					QSizeF m_qContentSize;
 
-//				QPointer<QGraphicsProxyWidget> m_pHScroll;
-//				QPointer<QGraphicsProxyWidget> m_pVScroll;
-//				QPointer<QGraphicsProxyWidget> m_pCorner;
-				QScrollBar m_HScrollBar;
-				QScrollBar m_VScrollBar;
-				QWidget m_CornerWidget;
+					QPointer<QGraphicsProxyWidget> m_pHScroll;
+					QPointer<QGraphicsProxyWidget> m_pVScroll;
+					QPointer<QGraphicsProxyWidget> m_pCorner;
+					QScrollBar m_HScrollBar;
+					QScrollBar m_VScrollBar;
+					QWidget m_CornerWidget;
 
-			public:
+				public:
 
-				CQtGraphicsFrame();
-				~CQtGraphicsFrame();
+					CQtGraphicsFrame();
+					~CQtGraphicsFrame();
 
-				void SetContentSize(QSizeF const &qSize);
+					QRectF& SetContentSize(QSizeF const &qSize, QRectF &bigqSize);
+					void DrawScrolls(QRectF &bigqSize);
+				private:
 
-			private:
+					QRectF& UpdateScrolls(QRectF &bigqSize);
+					
 
-				void UpdateScrolls();
+					private slots:
 
-				private slots:
-
-				void OnHScrollBarChanged(int value);
-				void OnVScrollBarChanged(int value);
-			};
+					void OnHScrollBarChanged(int value);
+					void OnVScrollBarChanged(int value);
+				};
+			}
 
 		}
 	}
