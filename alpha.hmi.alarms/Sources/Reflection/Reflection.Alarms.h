@@ -84,7 +84,7 @@ AR_BEGIN_DECLARE_PROPERTIES(aha::AlarmsControl, ahar::Aspect, aoe::Schema)
 		(AR_NSTR(L"Высота"), AR_NSTR(L"Высота"))
 	)
 	AR_PROPERTY(
-	(maxAlarmsCount_, Property::None, GetMaxAlarmsCount, SetMaxAlarmsCount),
+		(maxAlarmsCount_, Property::None, GetMaxAlarmsCount, SetMaxAlarmsCount),
 		(AR_NSTR(L"Максимальное число алармов"), AR_NSTR(L"Максимальное число алармов"))
 	)
 AR_END_DECLARE_PROPERTIES
@@ -94,18 +94,12 @@ AR_END_DECLARE_PROPERTIES
 ////////////////////////////////////////////////////////////////////////////////
 
 AR_BEGIN_DECLARE_AGGREGATEDS(aha::AlarmsControl, ahar::Aspect, aoe::Schema)
-	//AR_AGGREGATED(
-	//	(location_, Location),
-	//	(AR_NSTR(L"Хост"), AR_NSTR(L"Хост OPC DA сервера")))
+	AR_AGGREGATED(
+		(host_, Host),
+		(AR_NSTR(L"Хост"), AR_NSTR(L"Хост OPC AE сервера")))
 	AR_AGGREGATED(
 		(progId_, ProgId),
 		(AR_NSTR(L"ProgID"), AR_NSTR(L"ProgID OPC DA сервера")))
-	AR_AGGREGATED(
-		(path_, Path),
-		(AR_NSTR(L"Путь"), AR_NSTR(L"Путь ветки сигналов")))
-	//AR_AGGREGATED(
-	//	(parentSource_, ParentSource),
-	//	(AR_NSTR(L"Родительский источник"), AR_NSTR(L"Ссылка на родительский источник сигналов")))
 AR_END_DECLARE_AGGREGATEDS
 
 ////////////////////////////////////////////////////////////////////////////////

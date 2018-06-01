@@ -74,9 +74,9 @@ void AlarmsControl::setCenterPos(QPointF const &pos)
 	setPos(pos - rect().center());
 }
 
-Alpha::Binbo::default_string AlarmsControl::location() const
+Alpha::Binbo::default_string AlarmsControl::host() const
 {
-	return path_;
+	return host_;
 }
 
 Alpha::Binbo::default_string AlarmsControl::progId() const
@@ -94,6 +94,16 @@ void AlarmsControl::SetMaxAlarmsCount(size_t maxAlarmsCount)
 	maxAlarmsCount_ = maxAlarmsCount;
 }
 
+size_t Alpha::Hmi::Alarms::AlarmsControl::GetAlarmHeight() const
+{
+	return alarmHeight_;
+}
+
+void Alpha::Hmi::Alarms::AlarmsControl::SetAlarmHeight(size_t alarmHeight)
+{
+	alarmHeight_ = alarmHeight;
+}
+
 void AlarmsControl::OnVerticalScrollBarChanged(int value)
 {
 	auto pos = QPoint(0, -(value));
@@ -106,7 +116,7 @@ void AlarmsControl::paint(QPainter *painter, const QStyleOptionGraphicsItem *opt
 	if (alarms_.count() * alarmHeight_ > ceil(this->boundingRect().height()))
 		verticalScrollBar_.setEnabled(true);
 
-	verticalScrollBar_.setMaximum(alarms_.count() * 20);
+	verticalScrollBar_.setMaximum(alarms_.count() * alarmHeight_);
 	verticalScrollBar_.setFixedHeight(this->rect().height());
 
 	QGraphicsRectItem::paint(painter, option, widget);

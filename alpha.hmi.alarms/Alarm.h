@@ -45,6 +45,7 @@ public:
 
 		//QGraphicsRectItem* date = new QGraphicsRectItem(0, 0.0, 150.0, alarmHeight, this);
 		QGraphicsTextItem* txt = new QGraphicsTextItem(date_.toString("dd.MM.yyyy hh:mm:ss.zzz"), this);
+		txt->boundingRect().setWidth(150);
 
 		QGraphicsTextItem* txt2 = new QGraphicsTextItem(QString::fromStdString(message_));
 		txt2->setPos(childItems().last()->x() + childItems().last()->boundingRect().width(), 0);

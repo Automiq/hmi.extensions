@@ -31,7 +31,7 @@ namespace Alpha {
 				AR_FRIEND
 
 				/// Адрес подключения
-				const Alpha::Binbo::default_string path_;
+				const Alpha::Binbo::default_string host_;
 
 				/// ProgID
 				const Alpha::Binbo::default_string progId_;
@@ -48,8 +48,8 @@ namespace Alpha {
 				QScrollBar horisontalScrollBar_;
 				QPointer<QGraphicsProxyWidget> horisontalScrollBarProxy_;
 
-				uint64_t alarmHeight_;
-				uint64_t alarmWidth_;
+				size_t alarmHeight_;
+				size_t alarmWidth_;
 
 				QList<QSharedPointer<Alarm>> alarms_;
 
@@ -66,11 +66,14 @@ namespace Alpha {
 				QPointF centerPos() const;
 				void setCenterPos(QPointF const &pos);
 
-				Alpha::Binbo::default_string location() const;
+				Alpha::Binbo::default_string host() const;
 				Alpha::Binbo::default_string progId() const;
 
 				size_t GetMaxAlarmsCount() const;
 				void SetMaxAlarmsCount(size_t maxAlarmsCount);
+
+				size_t GetAlarmHeight() const;
+				void SetAlarmHeight(size_t alarmHeight);
 
 				void OnVerticalScrollBarChanged(int value);
 
