@@ -23,10 +23,10 @@ AR_DECLARE_API_EX(
 	( 0xc6, 0x5f, 0xf4, 0xdc, 0xf2, 0x2b, 0x47, 0xd3, 0x93, 0x33, 0x72, 0xc4, 0xe4, 0xe5, 0xf6, 0x62 ),
 	// Регистрируемые сущности
 	CLASSINFO
-	//AGGREGATEDS
+	AGGREGATEDS
 	PROPERTIES
 	//SIGNALS
-	//METHODS
+	METHODS
 )
 
 
@@ -41,7 +41,6 @@ AR_DECLARE_CLASSINFO(
 		AR_NSTR(L"Компонент отображения технологических событий")
 	)
 )
-
 
 ////////////////////////////////////////////////////////////////////////////////
 //		Регистрация свойств
@@ -84,4 +83,35 @@ AR_BEGIN_DECLARE_PROPERTIES(aha::AlarmsControl, ahar::Aspect, aoe::Schema)
 		(Height, Property::None, GetHeight, SetHeight),
 		(AR_NSTR(L"Высота"), AR_NSTR(L"Высота"))
 	)
+	AR_PROPERTY(
+	(maxAlarmsCount_, Property::None, GetMaxAlarmsCount, SetMaxAlarmsCount),
+		(AR_NSTR(L"Максимальное число алармов"), AR_NSTR(L"Максимальное число алармов"))
+	)
 AR_END_DECLARE_PROPERTIES
+
+////////////////////////////////////////////////////////////////////////////////
+//		Регистрация вложенных объектов
+////////////////////////////////////////////////////////////////////////////////
+
+AR_BEGIN_DECLARE_AGGREGATEDS(aha::AlarmsControl, ahar::Aspect, aoe::Schema)
+	//AR_AGGREGATED(
+	//	(location_, Location),
+	//	(AR_NSTR(L"Хост"), AR_NSTR(L"Хост OPC DA сервера")))
+	AR_AGGREGATED(
+		(progId_, ProgId),
+		(AR_NSTR(L"ProgID"), AR_NSTR(L"ProgID OPC DA сервера")))
+	AR_AGGREGATED(
+		(path_, Path),
+		(AR_NSTR(L"Путь"), AR_NSTR(L"Путь ветки сигналов")))
+	//AR_AGGREGATED(
+	//	(parentSource_, ParentSource),
+	//	(AR_NSTR(L"Родительский источник"), AR_NSTR(L"Ссылка на родительский источник сигналов")))
+AR_END_DECLARE_AGGREGATEDS
+
+////////////////////////////////////////////////////////////////////////////////
+//		Регистрация методов
+////////////////////////////////////////////////////////////////////////////////
+
+AR_BEGIN_DECLARE_METHODS(aha::AlarmsControl, ahar::Aspect, aoe::Schema)
+	AR_METHOD((addAlarm), (AR_NSTR(L"Добавление аларма в таблицу"), AR_NSTR(L"Добавление аларма в таблицу")))
+AR_END_DECLARE_METHODS

@@ -22,6 +22,21 @@
     <Filter Include="Source Files\Helpers">
       <UniqueIdentifier>{833a37e6-cdeb-4518-a717-b025bd7cc529}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{3f0fee99-044b-486e-a5f1-4ae1f7a74626}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{0852bc2d-00c1-48e3-8854-95c4d34bfad7}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\alpha.hmi.alarms.cpp">
@@ -68,9 +83,6 @@
     <ClInclude Include="Sources\Module.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\AlarmsControl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Sources\Helpers\ReflectionHelpers.h">
       <Filter>Header Files\Helpers</Filter>
     </ClInclude>
@@ -98,5 +110,13 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Sources\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Sources\AlarmsControl.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Alarm.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
 </Project>
