@@ -1,6 +1,7 @@
 #include "stdafx.h"
 
 #include "AlarmsControl.h"
+#include "AlarmsSource.h"
 #include "QtWidgets\qdockwidget.h"
 #include <QtWidgets\qgraphicswidget.h>
 #include <QtWidgets\qgraphicsproxywidget.h>
@@ -72,16 +73,6 @@ QPointF AlarmsControl::centerPos() const
 void AlarmsControl::setCenterPos(QPointF const &pos)
 {
 	setPos(pos - rect().center());
-}
-
-Alpha::Binbo::default_string AlarmsControl::host() const
-{
-	return host_;
-}
-
-Alpha::Binbo::default_string AlarmsControl::progId() const
-{
-	return progId_;
 }
 
 size_t AlarmsControl::GetMaxAlarmsCount() const

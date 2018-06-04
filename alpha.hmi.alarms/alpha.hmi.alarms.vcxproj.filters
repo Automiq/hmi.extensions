@@ -107,6 +107,12 @@
     <ClInclude Include="Sources\Helpers\ZOrderHelper.h">
       <Filter>Header Files\Helpers</Filter>
     </ClInclude>
+    <ClInclude Include="Sources\Reflection.AlarmsSource.h">
+      <Filter>Reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\AlarmsSource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Sources\ReadMe.txt" />

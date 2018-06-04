@@ -30,12 +30,6 @@ namespace Alpha {
 			{
 				AR_FRIEND
 
-				/// Адрес подключения
-				const Alpha::Binbo::default_string host_;
-
-				/// ProgID
-				const Alpha::Binbo::default_string progId_;
-
 				/// Максимальное количество отображаемых алармов
 				size_t maxAlarmsCount_;
 
@@ -65,9 +59,6 @@ namespace Alpha {
 
 				QPointF centerPos() const;
 				void setCenterPos(QPointF const &pos);
-
-				Alpha::Binbo::default_string host() const;
-				Alpha::Binbo::default_string progId() const;
 
 				size_t GetMaxAlarmsCount() const;
 				void SetMaxAlarmsCount(size_t maxAlarmsCount);
