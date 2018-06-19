@@ -45,14 +45,14 @@ namespace Alpha {
 				size_t alarmHeight_;
 				size_t alarmWidth_;
 
-				QList<QSharedPointer<Alarm>> alarms_;
+				QList<QSharedPointer<AlarmView>> alarms_;
 
 			public:
 
 				AlarmsControl();
 				~AlarmsControl();
 
-				void addAlarm(uint8_t priotity);
+				void addAlarm(uint8_t priotity, const Alpha::Binbo::default_string &message);
 
 				void setNativeParent(QGraphicsItem *parent);
 				void setRect(QRectF const &rc);
@@ -69,6 +69,13 @@ namespace Alpha {
 				void OnVerticalScrollBarChanged(int value);
 
 				void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = Q_NULLPTR) Q_DECL_OVERRIDE;
+				
+				QPainterPath shape() const Q_DECL_OVERRIDE
+				{
+					QPainterPath path;
+					path.addRect(this->boundingRect().adjusted(1, 1, -1, -1));
+					return path;
+				}
 			};
 
 		}	//namespace Alarms

@@ -37,6 +37,9 @@
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="Header Files\AlarmsSource">
+      <UniqueIdentifier>{5e916b15-301b-477e-892d-33b23b21192e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\alpha.hmi.alarms.cpp">
@@ -111,7 +114,7 @@
       <Filter>Reflection</Filter>
     </ClInclude>
     <ClInclude Include="Sources\AlarmsSource.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\AlarmsSource</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

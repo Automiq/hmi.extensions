@@ -4,18 +4,14 @@
 
 namespace Alpha { namespace Hmi { namespace Alarms {
 
+	//_COM_SMARTPTR_TYPEDEF(IOPCEventServer, __uuidof(IOPCEventServer));
+
 	class AlarmsSource
 	{
 		AR_FRIEND
 
-		/// Значение сигнала
+		/// Необходимое значение сигнала
 		Alpha::Binbo::default_variant _Value;
-
-		/// Адрес подключения
-		const Alpha::Binbo::default_string host_;
-
-		/// ProgID
-		const Alpha::Binbo::default_string progId_;
 
 		/// Сигнал, свидетельствующий об изменении значения
 		Alpha::Reflection::SignalCore<Alpha::Binbo::default_variant> _ValueChanged;
@@ -31,16 +27,6 @@ namespace Alpha { namespace Hmi { namespace Alarms {
 		Alpha::Binbo::default_variant GetValue()
 		{
 			return _Value;
-		}
-
-		Alpha::Binbo::default_string GetHost() const
-		{
-			return host_;
-		}
-
-		Alpha::Binbo::default_string GetProgId() const
-		{
-			return progId_;
 		}
 	};
 

@@ -85,7 +85,7 @@ AR_BEGIN_DECLARE_PROPERTIES(aha::AlarmsControl, ahar::Aspect, aoe::Schema)
 	)
 	AR_PROPERTY(
 		(maxAlarmsCount_, Property::None, GetMaxAlarmsCount, SetMaxAlarmsCount),
-		(AR_NSTR(L"Максимальное число алармов"), AR_NSTR(L"Максимальное число алармов"))
+		(AR_NSTR(L"Отображаемое число событий"), AR_NSTR(L"Максимальное число отображаемых событий"))
 	)
 AR_END_DECLARE_PROPERTIES
 

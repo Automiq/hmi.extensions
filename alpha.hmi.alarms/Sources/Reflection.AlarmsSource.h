@@ -20,7 +20,7 @@ AR_DECLARE_API_EX(
 	(0xe9, 0x14, 0xd5, 0xc7, 0x60, 0x0a, 0x49, 0xa8, 0x85, 0x62, 0x51, 0x8c, 0x47, 0x52, 0x85, 0x9a),
 	// Регистрируемые сущности
 	CLASSINFO
-	AGGREGATEDS
+//	AGGREGATEDS
 	PROPERTIES
 	//SIGNALS
 	//METHODS
@@ -33,20 +33,6 @@ AR_DECLARE_CLASSINFO(
 		AR_NSTR(L"Источник технологических событий")
 	)
 )
-
-////////////////////////////////////////////////////////////////////////////////
-//		Регистрация вложенных объектов
-////////////////////////////////////////////////////////////////////////////////
-AR_BEGIN_DECLARE_AGGREGATEDS(aha::AlarmsSource, ahar::Aspect, aoe::Schema)
-	AR_AGGREGATED(
-		(host_, GetHost),
-		(AR_NSTR(L"Хост"), AR_NSTR(L"Хост OPC AE сервера"))
-	)
-	AR_AGGREGATED(
-		(progId_, GetProgId),
-		(AR_NSTR(L"ProgID"), AR_NSTR(L"ProgID OPC AE сервера"))
-	)
-AR_END_DECLARE_AGGREGATEDS
 
 ////////////////////////////////////////////////////////////////////////////////
 //		Регистрация свойств

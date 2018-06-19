@@ -38,7 +38,7 @@ AlarmsControl::~AlarmsControl()
 {
 }
 
-void AlarmsControl::addAlarm(uint8_t priotity)
+void AlarmsControl::addAlarm(uint8_t priotity, const Alpha::Binbo::default_string &message)
 {
 	if (alarms_.size() >= maxAlarmsCount_)
 	{
@@ -46,7 +46,7 @@ void AlarmsControl::addAlarm(uint8_t priotity)
 		alarms_.removeFirst();
 	}
 
-	alarms_.push_back(QSharedPointer<Alarm>(new Alarm(alarmHeight_, priotity, alarmsControlProxy_)));
+	alarms_.push_back(QSharedPointer<AlarmView>(new AlarmView(Alarm(message, QDateTime::currentDateTime(), priotity), alarmHeight_, alarmsControlProxy_)));
 }
 
 void AlarmsControl::setNativeParent(QGraphicsItem *parent)
@@ -103,9 +103,10 @@ void AlarmsControl::OnVerticalScrollBarChanged(int value)
 
 void AlarmsControl::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-	verticalScrollBarProxy_->setPos(this->boundingRect().width() - verticalScrollBar_.width(), 0);
-	if (alarms_.count() * alarmHeight_ > ceil(this->boundingRect().height()))
-		verticalScrollBar_.setEnabled(true);
+	verticalScrollBarProxy_->setPos(this->boundingRect().width() - verticalScrollBar_.width() - 1, 0);
+	
+	// При необходимости выставляем активность у вертикального скроллбара
+	verticalScrollBar_.setEnabled(alarms_.count() * alarmHeight_ > ceil(this->boundingRect().height()));
 
 	verticalScrollBar_.setMaximum(alarms_.count() * alarmHeight_);
 	verticalScrollBar_.setFixedHeight(this->rect().height());
