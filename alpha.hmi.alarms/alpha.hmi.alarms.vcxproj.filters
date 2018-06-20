@@ -110,11 +110,11 @@
     <ClInclude Include="Sources\Helpers\ZOrderHelper.h">
       <Filter>Header Files\Helpers</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Reflection.AlarmsSource.h">
-      <Filter>Reflection</Filter>
-    </ClInclude>
-    <ClInclude Include="Sources\AlarmsSource.h">
+    <ClInclude Include="Sources\AlarmSettings.h">
       <Filter>Header Files\AlarmsSource</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Reflection.AlarmSettings.h">
+      <Filter>Reflection</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

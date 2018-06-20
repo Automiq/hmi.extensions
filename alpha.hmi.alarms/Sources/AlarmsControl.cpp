@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "AlarmsControl.h"
-#include "AlarmsSource.h"
+#include "AlarmSettings.h"
 #include "QtWidgets\qdockwidget.h"
 #include <QtWidgets\qgraphicswidget.h>
 #include <QtWidgets\qgraphicsproxywidget.h>

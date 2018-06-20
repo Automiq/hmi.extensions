@@ -61,8 +61,8 @@
     </CustomBuild>
     <CustomBuild Include="Sources\AlarmsControl.h" />
     <ClInclude Include="Sources\AlarmsInterfaceImpl.h" />
-    <ClInclude Include="Sources\AlarmsSource.h" />
-    <ClInclude Include="Sources\Reflection.AlarmsSource.h" />
+    <ClInclude Include="Sources\AlarmSettings.h" />
+    <ClInclude Include="Sources\Reflection.AlarmSettings.h" />
     <ClInclude Include="Sources\Helpers\HMILayoutItemMixin.h" />
     <ClInclude Include="Sources\Helpers\HMIRectImplMixin.h" />
     <ClInclude Include="Sources\Helpers\ZOrderHelper.h" />
