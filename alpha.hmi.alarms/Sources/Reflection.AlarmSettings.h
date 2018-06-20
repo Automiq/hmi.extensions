@@ -41,7 +41,7 @@ AR_DECLARE_CLASSINFO(
 AR_BEGIN_DECLARE_AGGREGATEDS(aha::AlarmSettings, ahar::Aspect, aoe::Schema)
 	AR_AGGREGATED(
 	(_AlarmsControl, ParentSource),
-		(AR_NSTR(L"Родительский источник"), AR_NSTR(L"Ссылка на родительский источник сигналов")))
+		(AR_NSTR(L"Компонент отображения"), AR_NSTR(L"Ссылка компонент отображения событий")))
 
 	AR_AGGREGATED(
 	(_Message, GetMsg),

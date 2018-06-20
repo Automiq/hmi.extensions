@@ -38,7 +38,7 @@ AlarmsControl::~AlarmsControl()
 {
 }
 
-void AlarmsControl::addAlarm(uint8_t priotity, const Alpha::Binbo::default_string &message)
+void AlarmsControl::addAlarm(uint16_t priotity, const Alpha::Binbo::default_string &message)
 {
 	if (alarms_.size() >= maxAlarmsCount_)
 	{

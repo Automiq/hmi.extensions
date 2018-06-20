@@ -9,18 +9,18 @@
 // Информация о событии
 struct Alarm
 {
-	enum Priority : uint8_t
+	enum Priority : uint16_t
 	{
-		Low,
-		Medium,
-		High,
+		Low = 0,
+		Medium = 400,
+		High =  600,
 	};
 
 	Alpha::Binbo::default_string message;
 	QDateTime date;
-	uint8_t priority;
+	uint16_t priority;
 
-	Alarm(const Alpha::Binbo::default_string &message, const QDateTime &date, uint8_t priority) :
+	Alarm(const Alpha::Binbo::default_string &message, const QDateTime &date, uint16_t priority) :
 		message(message), date(date), priority(priority)
 	{ }
 };
@@ -57,32 +57,13 @@ public:
 	}
 
 	// Костыль
-	QColor setColor(uint8_t priority)
+	QColor setColor(uint16_t priority)
 	{
-		switch (priority)
-		{
-		case Alarm::Low:
-			break;
-		case Alarm::Medium:
-			return Qt::yellow;
-		case Alarm::High:
+		if (priority > Alarm::High)
 			return Qt::red;
-		default:
-			break;
-		}
-		return Qt::white;
-	}
-
-	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) Q_DECL_OVERRIDE
-	{
-		//setRect(this->rect().adjusted(0, 0, parentItem()->boundingRect().width(), 0));
-		//auto hz = painter->clipBoundingRect();
-		//painter->clipBoundingRect().adjust(1, 1, -1, -1);
-		////auto hz2 = parentItem()->boundingRect();
-		//painter->clipPath().addRect(parentItem()->boundingRect());
-		//auto hz3 = painter->clipBoundingRect();
-		//painter->setClipRect(parentItem()->boundingRect().adjusted(0, 0, -1, -1));
-		//painter->setClipRect(QRectF(0, 0, 0, 0));
-		QGraphicsRectItem::paint(painter, option, widget);
+		else if (priority > Alarm::Medium)
+			return Qt::yellow;
+		else
+			return Qt::white;
 	}
 };

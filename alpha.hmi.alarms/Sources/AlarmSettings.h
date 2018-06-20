@@ -27,7 +27,7 @@ namespace Alpha { namespace Hmi { namespace Alarms {
 		const Alpha::Reflection::ReflectedPtr<AlarmsControl> _AlarmsControl;
 
 		/// Важность
-		uint8_t _Priority;
+		uint16_t _Priority;
 
 	public:
 
@@ -63,12 +63,12 @@ namespace Alpha { namespace Hmi { namespace Alarms {
 			return _RequiredValue;
 		}
 
-		void SetPriority(uint8_t Value)
+		void SetPriority(uint16_t Value)
 		{
 			_Priority = Value;
 		}
 
-		uint8_t GetPriority()
+		uint16_t GetPriority()
 		{
 			return _Priority;
 		}

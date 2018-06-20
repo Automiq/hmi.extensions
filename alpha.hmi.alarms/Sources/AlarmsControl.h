@@ -52,7 +52,7 @@ namespace Alpha {
 				AlarmsControl();
 				~AlarmsControl();
 
-				void addAlarm(uint8_t priotity, const Alpha::Binbo::default_string &message);
+				void addAlarm(uint16_t priotity, const Alpha::Binbo::default_string &message);
 
 				void setNativeParent(QGraphicsItem *parent);
 				void setRect(QRectF const &rc);
